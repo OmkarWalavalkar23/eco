@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #bffcff;
+  --foreground: #ededed;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #bffcff;
+    --foreground: #ededed;
+  }
+}
+
+@font-face {
+  font-family: "Eastman Grotesque";
+  src: url("/fonts/Eastman-Grotesque-Bold-trial.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: url('/fonts/Karla-VariableFont_wght.ttf') format("opentype");
+  font-style: normal;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* For hiding scrollbars */
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and old Edge */
+}
+
+::-webkit-scrollbar {
+  /* Chrome, Safari, and Edge */
+  display: none;
+}
+
+/* Navbar styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #bffcff65;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 60px; /* Specify navbar height */
+}
+
+.nav-links a {
+  margin-right: 15px;
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a:hover {
+  color: #0056b3;
+}
+
+.nav-auth {
+  display: flex;
+  align-items: center;
+}
+
+.login-btn,
+.logout-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.login-btn {
+  background-color: #007bff;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+.logout-btn {
+  background-color: #ff4b4b;
+}
+
+.logout-btn:hover {
+  background-color: #ff2b2b;
+}
+
+.nav-auth span {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Main content styling */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  /* margin-top: 60px; Push content down by the navbar height */
+  height: 100vh; /* push footer to the bottom of the screen */
+  overflow-y: scroll;
+}
+
+.main-content {
+  margin: 30px; /* reduced from 50px */
+  /* flex: 1; */
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+  gap: 5;
+}
+
+.logo {
+  max-width: 100%;
+}
+
+/* Carousel styling */
+.carousel {
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 1px;
+}
+
+.carousel-content {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #212529;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.highlight {
+  color: #35eb11;
+  font-weight: bold;
+}
+
+.slide {
+  opacity: 1;
+}
+
+.seperator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* height: 70%; */
+  padding-top: 60px;
+  min-height: max-content;
+  height: -webkit-fill-available;
+}
+
+/* Custom toast styles */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.toast.success {
+  background-color: #28a745;
+}
+
+.toast.error {
+  background-color: #dc3545;
+}
+
+.toast button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Link and paragraph styling */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #333;
+}
+
+/* Added Mobile Responsiveness for Carousel */
+@media (max-width: 768px) {
+  .carousel {
+    max-width: 96%; /* adjusted width for better spacing in both ends */
+  }
+}
+
+/* Main content responsiveness added */
+/* @media (min-width: 601px) and (max-width: 1024px) { 
+  .main-content {
+    width: 100%;
+  }
+} */
+
+@media (max-width: 1024px) {
+  .main-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .seperator {
+    height: unset;
+  }
+
+  .carousel {
+    height: 72px;
+  }
+}
+
+@media (max-width: 370px) {
+  .nav-links {
+    width: 10%;
+    height: 100%;
+  }
+
+  .nav-links a {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .nav-auth {
+    width: 90%;
+    display: flex;
+    justify-content: end;
+  }
+
+  .nav-auth div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-auth div span {
+    white-space: nowrap;
+    max-width: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

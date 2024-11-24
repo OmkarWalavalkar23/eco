@@ -1,0 +1,261 @@
+.contact-page {
+  width: 100vw;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form {
+  width: 40%;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px #0003;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-heading {
+  text-align: center;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  text-align: center;
+}
+
+.each-input-field {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.each-input-field label {
+  color: #333;
+  font-size: 1rem;
+}
+
+.each-input-field label span {
+  color: red;
+}
+
+.each-input-field input {
+  width: 100%;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 10px;
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  padding: 10px;
+}
+
+.each-input-field textarea {
+  width: 100%;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 10px;
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  padding: 10px;
+  min-height: 100px;
+}
+
+.each-input-field input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.each-input-field .phone-container {
+  width: 100%;
+  display: flex;
+}
+
+.phone-container .react-international-phone-input-container {
+  width: 100%;
+  align-items: center;
+}
+
+.phone-container
+  .react-international-phone-input-container
+  .react-international-phone-country-selector {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.phone-container
+  .react-international-phone-input-container
+  .react-international-phone-country-selector
+  button {
+  border: none;
+}
+
+.phone-container
+  .react-international-phone-input-container
+  .react-international-phone-input {
+  width: 90%;
+  background-color: #e0e0e0;
+  padding: 10px;
+  font-size: 1rem;
+  height: 100%;
+  border-radius: 10px;
+  height: auto;
+}
+
+.each-input-field .countries-list-dropdown {
+  position: absolute;
+  width: 100%;
+  top: 90%;
+  left: 0;
+  height: 250px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #e0e0e0;
+  border-radius: 0 0 10px 10px;
+  padding-top: 0.5rem;
+}
+
+.each-country {
+  color: #333;
+  padding: 0 1rem;
+  cursor: pointer;
+  background: #e0e0e0;
+}
+
+.error {
+  font-size: 0.8rem;
+  color: red;
+}
+
+.empty-container {
+  width: 100%;
+  height: 78px;
+}
+
+.contact-buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-buttons button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.send-button {
+  width: 68%;
+}
+
+.send-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.25;
+}
+
+.home-button {
+  width: 30%;
+}
+
+.home-button a {
+  color: #fff;
+}
+
+.submission-msg {
+  width: 100%;
+  text-align: center;
+  color: green;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.intl-tel-input.allow-dropdown.separate-dial-code .selected-flag {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.intl-tel-input.allow-dropdown.separate-dial-code .selected-dial-code {
+  padding-left: 5px !important;
+  color: #333;
+}
+
+.intl-tel-input .iti-container {
+  width: 250px !important; /* Adjust width as needed */
+  max-height: 300px !important; /* Adjust max height for scrollability */
+}
+
+.intl-tel-input .country-list {
+  width: 250px !important; /* Adjust width as needed */
+  max-height: 300px !important; /* Adjust max height for scrollability */
+  overflow-y: auto; /* Enable scroll if the list is long */
+}
+
+@media (max-width: 1100px) {
+  .contact-form {
+    width: 55%;
+    padding: 2rem;
+  }
+
+  .contact-buttons button {
+    font-size: 0.8rem;
+  }
+
+  .send-button {
+    min-width: 50%;
+    max-width: 58%;
+  }
+
+  .home-button {
+    min-width: 40%;
+  }
+}
+
+@media (max-width: 650px) {
+  .contact-page {
+    padding: 2rem;
+  }
+
+  .contact-form {
+    width: 75%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 475px) {
+  .contact-form {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .send-button {
+    min-width: 48%;
+    max-width: 48%;
+  }
+
+  .home-button {
+    min-width: 50%;
+  }
+
+  .phone-container
+    .react-international-phone-input-container
+    .react-international-phone-country-selector {
+    width: 18%;
+  }
+}

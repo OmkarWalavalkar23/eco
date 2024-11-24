@@ -1,0 +1,134 @@
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  min-height: 100%;
+}
+
+.modal.open {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  /* padding-right: 5rem; */
+  right: -40%;
+}
+
+.auth-tru {
+  top: -52%;
+}
+
+.auth-fls {
+  top: -93%;
+}
+
+.qr-modal-content {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 375px; /* reduced from 500px  */
+  width: 80%; /* reduced from 90%  */
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-height: 100%;
+}
+
+.close {
+  position: absolute;
+  right: 11px;
+  top: 4px; /* reduced from 15px for better alignment in Mobile  */
+  color: #888;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.qr-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 20px 0;
+}
+
+.qr-wrapper svg {
+  height: 200px;
+}
+
+.overlay-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+.qr-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.download-btn, .copy-btn {
+  padding: 8px 8px;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-size: 0.8rem;
+  font-weight: 100;
+  width: auto;
+}
+
+.download-btn:hover, .copy-btn:hover {
+  background-color: #45a049;
+}
+
+/* Model buttons responsiveness added */
+/* newly added */
+@media (max-width: 1100px) {
+  .modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal.open {
+    justify-content: center;
+    padding-right: 0;
+    right: 0;
+  }
+
+  .auth-tru {
+    top: unset;
+  }
+
+  .auth-fls {
+    top: unset;
+  }
+
+  .qr-modal-content {
+    max-width: 500px;
+    width: 35%;
+  }
+
+  .overlay-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .download-btn, .copy-btn {
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 500px) {
+  .qr-modal-content {
+    width: 85%;
+  }
+}
